@@ -8,6 +8,8 @@ from ascii_art import STAGES
 
 # List of secret words
 WORDS = ["python", "git", "github", "snowman", "meltdown"]
+WIN_MESSAGE = "Congratulations, you saved the snowman!"
+LOSE_MESSAGE = "Game over! The word was %s."
 
 
 def get_random_word():
@@ -42,8 +44,10 @@ def play_game():
         if guess in secret_word:
             guessed_letters.append(guess)
             if set(guessed_letters) == all_letters:
+                print(WIN_MESSAGE)
                 break
         else:
             mistakes += 1
             if mistakes > 3:
+                print(LOSE_MESSAGE % secret_word)
                 break
