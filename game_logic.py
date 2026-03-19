@@ -27,6 +27,22 @@ def display_game_state(mistakes, secret_word, guessed_letters):
             print("_", end = "")
     print("\n")
 
+
+def get_letter():
+    while True:
+        letter = input("Guess a letter: ").lower()
+        if not letter.isalpha():
+            print("This is not a letter.")
+            continue
+        if len(letter) != 1:
+            print("Enter exactly one letter.")
+            continue
+        break
+
+    print("You guessed:", letter)
+    return letter
+
+
 def play_game():
     secret_word = get_random_word()
     all_letters = set(list(secret_word))
@@ -35,8 +51,7 @@ def play_game():
     while True:
         display_game_state(mistakes, secret_word, guessed_letters)
         # For now, simply prompt the user once:
-        guess = input("Guess a letter: ").lower()
-        print("You guessed:", guess)
+        guess = get_letter()
         if guess in secret_word:
             guessed_letters.append(guess)
             if set(guessed_letters) == all_letters:
