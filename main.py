@@ -40,7 +40,13 @@ def get_random_word():
 
 def display_game_state(mistakes, secret_word, guessed_letters):
     print(STAGES[mistakes])
-
+    print("Word: ", end = "")
+    for letter in secret_word:
+        if letter in guessed_letters:
+            print(letter, end = "")
+        else:
+            print("_", end = "")
+    print("\n")
 
 def play_game():
     secret_word = get_random_word()
@@ -56,7 +62,7 @@ def play_game():
         guess = input("Guess a letter: ").lower()
         print("You guessed:", guess)
         if guess in secret_word:
-            pass
+            guessed_letters.append(guess)
         else:
             mistakes += 1
 
