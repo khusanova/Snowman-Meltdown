@@ -38,6 +38,10 @@ def get_random_word():
     return WORDS[random.randint(0, len(WORDS) - 1)]
 
 
+def display_game_state(mistakes, secret_word, guessed_letters):
+    print(STAGES[mistakes])
+
+
 def play_game():
     secret_word = get_random_word()
     print("Welcome to Snowman Meltdown!")
@@ -45,8 +49,9 @@ def play_game():
         "Secret word selected: " + secret_word)  # for testing, later remove this line
 
     mistakes = 0
+    guessed_letters = []
     while True:
-        print(STAGES[mistakes])
+        display_game_state(mistakes, secret_word, guessed_letters)
         # For now, simply prompt the user once:
         guess = input("Guess a letter: ").lower()
         print("You guessed:", guess)
