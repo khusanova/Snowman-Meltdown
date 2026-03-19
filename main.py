@@ -65,6 +65,8 @@ def play_game():
             guessed_letters.append(guess)
         else:
             mistakes += 1
+            if mistakes > 3:
+                break
 
 
 if __name__ == "__main__":
