@@ -24,12 +24,12 @@ def display_game_state(mistakes, secret_word, guessed_letters):
         - Display the secret word with underscores for unguessed letters.
     """
     print(STAGES[mistakes])
-    print("Word: ", end = "")
+    print("Word: ", end="")
     for letter in secret_word:
         if letter in guessed_letters:
-            print(letter, end = "")
+            print(letter, end="")
         else:
-            print("_", end = "")
+            print("_", end="")
     print("\n")
 
 
