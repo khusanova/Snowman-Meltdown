@@ -44,12 +44,16 @@ def play_game():
     print(
         "Secret word selected: " + secret_word)  # for testing, later remove this line
 
+    mistakes = 0
     while True:
+        print(STAGES[mistakes])
         # For now, simply prompt the user once:
         guess = input("Guess a letter: ").lower()
         print("You guessed:", guess)
         if guess in secret_word:
-            break
+            pass
+        else:
+            mistakes += 1
 
 
 if __name__ == "__main__":
