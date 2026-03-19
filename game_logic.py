@@ -18,6 +18,11 @@ def get_random_word():
 
 
 def display_game_state(mistakes, secret_word, guessed_letters):
+    """
+    Display game state:
+        - Display ASCII art with the current state of the snowman;
+        - Display the secret word with underscores for unguessed letters.
+    """
     print(STAGES[mistakes])
     print("Word: ", end = "")
     for letter in secret_word:
@@ -29,6 +34,9 @@ def display_game_state(mistakes, secret_word, guessed_letters):
 
 
 def get_letter():
+    """
+    Ask user to guess a letter until a valid input
+    """
     while True:
         letter = input("Guess a letter: ").lower()
         if not letter.isalpha():
@@ -44,6 +52,10 @@ def get_letter():
 
 
 def play_game():
+    """
+    Play the "Melting snowman" game. Select a random word and let the user
+    guess it by entering letters.
+    """
     secret_word = get_random_word()
     all_letters = set(list(secret_word))
     mistakes = 0
