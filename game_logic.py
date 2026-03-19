@@ -30,7 +30,6 @@ def display_game_state(mistakes, secret_word, guessed_letters):
 def play_game():
     secret_word = get_random_word()
     all_letters = set(list(secret_word))
-    print("Welcome to Snowman Meltdown!")
     print(
         "Secret word selected: " + secret_word)  # for testing, later remove this line
 
