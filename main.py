@@ -1,3 +1,8 @@
+"""
+Play the game "Melting snowman". The game can be played multiple times until
+the user decides to quit.
+"""
+
 from game_logic import play_game
 
 
