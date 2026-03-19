@@ -30,9 +30,6 @@ def display_game_state(mistakes, secret_word, guessed_letters):
 def play_game():
     secret_word = get_random_word()
     all_letters = set(list(secret_word))
-    print(
-        "Secret word selected: " + secret_word)  # for testing, later remove this line
-
     mistakes = 0
     guessed_letters = []
     while True:
